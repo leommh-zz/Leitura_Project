@@ -16,6 +16,10 @@ const styles = {
         marginTop: 15,
         marginBottom: 5,
         padding: 20
+    },
+    error: {
+        ...globalStyles.panel,
+        backgroundColor: themes.colors.green
     }
 }
 

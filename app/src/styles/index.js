@@ -19,7 +19,8 @@ export const themes = {
     colors: {
         grey: '#c0c0c0',
         blue: '#010080',
-        darkGrey: '#333333'
+        darkGrey: '#333333',
+        green: '#008080'
     }
 }
 
