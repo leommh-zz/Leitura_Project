@@ -6,8 +6,14 @@ const styles = {
         ...themes.borders.small,
         background: themes.colors.grey,
         width: '100%',
-        padding: 8,
+        paddingLeft: 15,
+        paddingRight: 15,
+        paddingTop: 5,
+        paddingBottom: 5,
         marginTop: 8
+    },
+    rowNav: {
+        ...globalStyles.rowBetween
     },
     input: {
         ...themes.borders.small,
@@ -18,6 +24,18 @@ const styles = {
         maxWidth: '90%',
         padding: 5,
         fontSize: 16
+    },
+    inputSearch: {
+        ...themes.borders.small,
+        background: themes.colors.grey,
+        marginTop: 5,
+        marginBottom: 5,
+        padding: 5,
+        fontSize: 16,
+        width: 200
+    },
+    searchPanel: {
+        maxWidth: 300
     },
     select: {
         ...themes.borders.small,
