@@ -16,8 +16,8 @@ const updatePost = (statePosts, newPost) => {
     return posts;
 }
 
-const deletePost = (state, deletedPost) => {
-    let posts = state.allPosts.filter(post => 
+const deletePost = (statePosts, deletedPost) => {
+    let posts = statePosts.filter(post => 
         post.id !== deletedPost.id
     )
     return posts;
@@ -62,7 +62,9 @@ export default function posts (state = STATE_INITIAL, action) {
         case DELETE_POST:
             return {
                 ...state,
-                post: action.payload
+                post: [],
+				allPosts: deletePost(state.allPosts, action.payload),
+				categoryPosts: deletePost(state.categoryPosts, action.payload)
             }
         case REORDER_POSTS: 
             return {

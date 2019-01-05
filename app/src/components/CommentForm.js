@@ -29,9 +29,9 @@ class CommentForm extends Component {
                         </Heading>
                     </div>
                         
-                    <Button onClick={() => this.props.goBack()} appearance="minimal" style={styles.button}>
+                    <button onClick={() => this.props.goBack()} style={styles.button}>
                         <Strong style={styles.buttonText}>X</Strong>
-                    </Button>
+                    </button>
                     
                 </Row>
                 <Grid style={styles.columnCenter}>
@@ -41,6 +41,7 @@ class CommentForm extends Component {
                             name="author"
                             placeholder="Author"
                             value={author !== undefined ? author : ''}
+							disabled={mode === 'new' ? false : true}
                             onChange={(text) => setValue('author', text.target.value)}
                         />
 

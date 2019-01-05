@@ -10,6 +10,8 @@ import styles from './PageStyle'
 import { Button, Heading, Strong, Tooltip, Pane } from 'evergreen-ui'
 import { Grid, Row } from 'react-flexbox-grid';
 
+let action = undefined
+
 class PostView extends Component {
 
     state = {
@@ -23,13 +25,23 @@ class PostView extends Component {
 
     getPostAndComments = async () => {
         const { getPost, getPostComments, match: { params: { id } } } = this.props
-        getPost(id);
-        getPostComments(id);
+        action = "GET"
+        getPost(id)
+        getPostComments(id)
     }
 
-    componentDidUpdate() {
-        const post = this.props.post;
-        post && post.error && this.props.history.push("/page/error/404");
+    componentDidUpdate(oldProps) {
+        const post = this.props.post
+        if (Object.keys(post).length <=0 && action === "GET"){
+            action = undefined
+            this.props.history.push("/page/error/404")
+        } else if (action === "GET") {
+            action = undefined
+        }
+        if (oldProps.comments !== this.props.comments) {
+            const { match: { params: { id } } } = this.props
+            this.props.getPost(id)
+        }
     }
 
     showComments = (comments) => {
@@ -128,7 +140,7 @@ class PostView extends Component {
 
                                 <Pane display="flex" justifyContent="center">
                                     <Strong size={500} marginTop={50}>
-                                        Comments
+                                        Comments {`[${post.commentCount}]`}
                                     </Strong>
                                 </Pane>
 

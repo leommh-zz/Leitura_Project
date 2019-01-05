@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import './App.css'
 import Nav from './components/Nav'
@@ -6,8 +6,7 @@ import Routes from './Routes'
 import Menu from './components/Menu'
 import styles from './AppStyle';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <Grid fluid>
         <Row>
@@ -23,7 +22,6 @@ class App extends Component {
         </Row>
       </Grid>
     )
-  }
 }
 
 export default App

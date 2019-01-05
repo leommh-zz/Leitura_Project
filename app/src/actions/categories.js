@@ -14,7 +14,6 @@ export function getCategories() {
             method: 'GET'
         }).then((response) => {
             response.json().then((categories) => dispatch({type: GET_CATEGORIES, payload: categories}))
-            response.json().then((categories) => console.log(categories))
         })
         .then(() => dispatch(hideLoading()))
         .catch(err => console.log(err))

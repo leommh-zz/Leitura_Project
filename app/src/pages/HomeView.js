@@ -9,10 +9,6 @@ import Post from '../components/Post'
 
 class Home extends Component {
 
-  state = {
-    allPosts: []
-  }
-
   componentDidMount() {
     this.props.getPosts()
   }
@@ -35,7 +31,6 @@ class Home extends Component {
 
   render() {
     const {props: { allPosts, reOrderPosts }} = this
-    console.log(allPosts)
 
     return (
 
