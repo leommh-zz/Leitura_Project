@@ -1,4 +1,4 @@
-# Leitura_Project
+# Leitura_Project -> is blog study project
 
 This is a module completion project of the Udacty React programmer course, the project is based on a blog and contains all the main functions that every blog should have :D
 
